@@ -4,6 +4,7 @@ import Todo from '../models/Todo'
 interface Props {
   todos: Todo[],
   onTodoClicked: (todoId: number) => void
+  getAllPosts: () => void
 }
 interface State { }
 
@@ -13,7 +14,8 @@ export default class AddTodoForm extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    this.getPosts()
+    this.props.getAllPosts()
+    console.log(this.props)
   }
 
   getPosts() {

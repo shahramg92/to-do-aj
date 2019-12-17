@@ -11,8 +11,15 @@ export const initialState: State = {
 
 export function reducer(state: State = initialState, action: any) {
     switch (action.type) {
+      case actionTypes.GET_POSTS_START: {
+          return state;
+      }
       case actionTypes.GET_POSTS_SUCCESS: {
-          return state
+          console.log(state)
+          return state;
+      }
+      case actionTypes.GET_POSTS_FAILED: {
+        alert('get posts failed!')
       }
       default: return state;
     }
