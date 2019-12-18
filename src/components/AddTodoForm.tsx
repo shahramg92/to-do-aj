@@ -3,6 +3,7 @@ import { FormEvent } from 'react';
 
 interface Props {
   handleSubmit: (value: string) => void
+  getPosts: (value: string) => any
 }
 interface State {
   value: string
@@ -14,6 +15,10 @@ export default class AddTodoForm extends React.Component<Props, State> {
     this.state = { value: '' } // Value is empty by default
     this.updateValue = this.updateValue.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  componentDidMount() {
+    
   }
 
   updateValue(value: string) {
@@ -34,6 +39,8 @@ export default class AddTodoForm extends React.Component<Props, State> {
   render() {
     const { value } = this.state
     const { updateValue, handleSubmit } = this
+    // const data = this.props.getPosts;
+    // console.log(data)
     return (
       <div>
         <form onSubmit={handleSubmit}>
@@ -41,7 +48,7 @@ export default class AddTodoForm extends React.Component<Props, State> {
           <input type="text" value={value} onChange={e => updateValue(e.target.value)} />
           <button type="submit">Add todo !</button>
         </form>
-        <button type="submit">Add todo !</button>
+        <button>Add todo !</button>
       </div>
     )
   }
