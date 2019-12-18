@@ -8,7 +8,8 @@ export const getPostStart = () => {
 
 export const getPostSuccess = (response: any) => {
     return {
-      type: actionTypes.GET_POSTS_SUCCESS
+      type: actionTypes.GET_POSTS_SUCCESS,
+      payload: response
     };
 };
 

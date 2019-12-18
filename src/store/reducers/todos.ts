@@ -38,7 +38,9 @@ export function reducer(state: State = initialState, action: Action) {
        * This is the same as 
        * const todoId = action.payload.todoId
        */
-      const { todoId } = action.payload
+      const { todoId } = action.payload;
+      console.log('action.payload', action.payload);
+      console.log('todoId', todoId);
       return {
         ...state,
         todos: state.todos.map(todo => todo.id === todoId ? { ...todo, done: !todo.done } : todo)

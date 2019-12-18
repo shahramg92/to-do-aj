@@ -8,7 +8,7 @@ import * as toDoReducer from '../reducers/toDoReducer';
  */
 export interface State {
   todos: fromTodos.State
-  toDoCustom: toDoReducer.State,
+  toDoSagasData: toDoReducer.State,
 }
 
 /*
@@ -16,7 +16,7 @@ export interface State {
  */
 export const initialState: State = {
   todos: fromTodos.initialState,
-  toDoCustom: toDoReducer.initialState,
+  toDoSagasData: toDoReducer.initialState,
 }
 
 /*
@@ -25,5 +25,5 @@ export const initialState: State = {
  */
 export const reducer = combineReducers({
   todos: fromTodos.reducer,
-  toDoCustom: toDoReducer.reducer,
+  toDoSagasData: toDoReducer.reducer,
 })

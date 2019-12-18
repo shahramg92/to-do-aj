@@ -4,6 +4,7 @@ import AddTodo from './containers/AddTodo';
 import Todos from './containers/Todos';
 
 const App: React.FC = () => {
+  console.log('app');
   return (
     <div className="App">
       <header className="App-header">

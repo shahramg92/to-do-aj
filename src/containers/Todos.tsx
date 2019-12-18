@@ -1,19 +1,25 @@
 
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { bindActionCreators } from'redux';
 // import { State } from '../reducers'
 import { getTodos } from '../store/selectors/todos';
-import { toggleTodo } from '../store/actions/todos';
-import { getAllPosts } from '../store/actions/todos';
-import * as actions from '../store/actions/actionCreators';
+import { getAllPosts, toggleTodo } from '../store/actions/todos';
+import { getPostStart } from '../store/actions/actionCreators';
 import TodosList from '../components/TodoList';
 
 const mapStateToProps = (state: any) => ({
-  todos: getTodos(state)
+  todos: getTodos(state),
+  todosSagaData: state.toDoSagasData.toDoCustom
 })
 
-const mapDispatchToProps = {
-  onTodoClicked: toggleTodo,
-  getAllPosts: actions.getPostStart,
-}
+const mapDispatchToProps = (dispatch: any) => (
+  bindActionCreators(
+    {
+      getPostStart,
+      toggleTodo
+    },
+    dispatch
+  )
+)
 
 export default connect<any, any, any>(mapStateToProps, mapDispatchToProps)(TodosList)
