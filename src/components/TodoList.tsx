@@ -1,15 +1,16 @@
-import * as React from 'react'
-import Todo from '../models/Todo'
+import * as React from 'react';
+import Todo from '../models/Todo';
 
 interface Props {
   todos: Todo[],
+  todosSagaData: any[]
   toggleTodo: (todoId: number) => void
   getPostStart: () => any,
-  todosSagaData: any[]
 }
+
 interface State {
   todoList: any[]
- }
+}
 
 export default class TodoList extends React.Component<Props, State> {
   constructor(props: Props) {
@@ -21,21 +22,19 @@ export default class TodoList extends React.Component<Props, State> {
   }
 
   static getDerivedStateFromProps(nextProps : any) {
-
     return {
       todoList: [...nextProps.todos, ...nextProps.todosSagaData]
     }
   }
 
   componentDidMount() {
-
     this.props.getPostStart();
   }
 
   render() {
-  
     const { todos, toggleTodo, todosSagaData } = this.props
-      console.log('this.state.todoList', this.state.todoList)
+    console.log('this.state.todoList', this.state.todoList)
+
     return (
       <ul>
         {
@@ -49,7 +48,6 @@ export default class TodoList extends React.Component<Props, State> {
             </li>)
           )
         }
-        <button>show all</button>
       </ul>
     )
   }

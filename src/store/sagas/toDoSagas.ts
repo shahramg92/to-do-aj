@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { put, delay,takeEvery, all,call, takeLatest } from 'redux-saga/effects';
+import { put, delay, takeEvery, all,call, takeLatest } from 'redux-saga/effects';
 import { getPostSuccess, getPostStart } from '../actions/actionCreators';
-import { GET_POSTS_START } from '../actions/actionTypes'
+import { GET_POSTS_START } from '../actions/actionTypes';
+
 // export const fetchData = async () => {
 //   try {
 //     const response = await fetch("https://jsonplaceholder.typicode.com/posts?userId=1");
@@ -36,7 +37,6 @@ export function* asyncGetPosts() {
   try {
     const response = yield call(axios.get, "https://jsonplaceholder.typicode.com/posts?userId=1");
     // yield put({type: actions.getPostSuccess, response: response.data});
-
     yield put(getPostSuccess(response.data))
   } catch (e) {
       console.log(e);

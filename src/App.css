@@ -16,7 +16,8 @@
 .formContainer {
   max-width: 500px;
   width: 100%;
-  max-height: 800px;
+  min-height: 800px;
   height: 100%;
   background-color: grey;
+  margin: 200px 0px 200px 0px;
 }

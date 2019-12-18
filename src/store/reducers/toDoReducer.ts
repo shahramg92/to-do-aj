@@ -8,7 +8,7 @@ export interface State {
 
 export const initialState: State = {
     toDoCustom: [], // We don't have any todos at the start of the app
-    title: 'Title Of Store',
+    title: 'Title Of Store', // Created for testing purposes to see how immer works
   }
 
 export function reducer(state: State = initialState, action: any) {
@@ -28,7 +28,7 @@ export function reducer(state: State = initialState, action: any) {
 
           const nextState = produce(state, draftState => {
             draftState.toDoCustom = action.payload;
-            // draftState.title = 'updated saga'
+            // draftState.title = 'updated saga';
         });
 
         return nextState;

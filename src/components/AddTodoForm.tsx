@@ -1,10 +1,11 @@
-import * as React from 'react'
+import * as React from 'react';
 import { FormEvent } from 'react';
 
 interface Props {
   handleSubmit: (value: string) => void
   getPosts: (value: string) => any
 }
+
 interface State {
   value: string
 }
@@ -17,10 +18,6 @@ export default class AddTodoForm extends React.Component<Props, State> {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  componentDidMount() {
-    
-  }
-
   updateValue(value: string) {
     this.setState({ value })
   }
@@ -30,17 +27,14 @@ export default class AddTodoForm extends React.Component<Props, State> {
     if (!this.state.value.trim()) {
       return
     }
-
     this.props.handleSubmit(this.state.value)
     this.setState({ value: '' })
-
   }
 
   render() {
     const { value } = this.state
     const { updateValue, handleSubmit } = this
-    // const data = this.props.getPosts;
-    // console.log(data)
+
     return (
       <div>
         <form onSubmit={handleSubmit}>
@@ -48,7 +42,6 @@ export default class AddTodoForm extends React.Component<Props, State> {
           <input type="text" value={value} onChange={e => updateValue(e.target.value)} />
           <button type="submit">Add todo !</button>
         </form>
-        <button>Add todo !</button>
       </div>
     )
   }
