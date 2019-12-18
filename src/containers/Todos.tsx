@@ -1,7 +1,6 @@
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from'redux';
-// import { State } from '../reducers'
 import { getTodos } from '../store/selectors/todos';
 import { toggleTodo } from '../store/actions/todos';
 import { getPostStart } from '../store/actions/actionCreators';
@@ -22,4 +21,4 @@ const mapDispatchToProps = (dispatch: any) => (
   )
 )
 
-export default connect<any, any, any>(mapStateToProps, mapDispatchToProps)(TodosList)
+export default connect<any, any, any>(mapStateToProps, mapDispatchToProps)(TodosList);

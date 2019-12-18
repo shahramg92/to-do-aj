@@ -18,7 +18,6 @@ export const initialState: State = {
  */
 export function reducer(state: State = initialState, action: Action) {
   switch (action.type) {
-
     case ActionTypes.ADD_TODO: {
       /*
        * We have autocompletion here
@@ -32,7 +31,6 @@ export function reducer(state: State = initialState, action: Action) {
         todos: [...state.todos, todo] // Add todo to todos array
       }
     }
-
     case ActionTypes.TOGGLE_TODO: {
       /*
        * This is the same as 
