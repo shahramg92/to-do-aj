@@ -14,7 +14,6 @@ export const initialState: State = {
 export function reducer(state: State = initialState, action: any) {
     switch (action.type) {
       case actionTypes.GET_POSTS_START: {
-
           return state;
       }
       case actionTypes.GET_POSTS_SUCCESS: {
