@@ -47,19 +47,9 @@ export function toggleTodo(todoId: number): ToggleTodoAction {
   return { type: ActionTypes.TOGGLE_TODO, payload: { todoId } } // {todoId} is a shortcut for {todoId: todoId}
 }
 
-export function getAllPosts(posts: any): GetAllPosts {
-  return {
-    type: ActionTypes.GET_ALL_POST,
-    payload: {
-      posts: posts,
-    }
-  }
-}
-
-
 /*
  * Define the Action type
  * It can be one of the types defining in our action/todos file
  * It will be useful to tell typescript about our types in our reducer
  */
-export type Action = AddTodoAction | ToggleTodoAction | GetAllPosts;
+export type Action = AddTodoAction | ToggleTodoAction;

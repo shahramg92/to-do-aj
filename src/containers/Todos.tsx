@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from'redux';
 // import { State } from '../reducers'
 import { getTodos } from '../store/selectors/todos';
-import { getAllPosts, toggleTodo } from '../store/actions/todos';
+import { toggleTodo } from '../store/actions/todos';
 import { getPostStart } from '../store/actions/actionCreators';
 import TodosList from '../components/TodoList';
 

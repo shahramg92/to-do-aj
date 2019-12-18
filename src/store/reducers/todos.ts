@@ -47,13 +47,6 @@ export function reducer(state: State = initialState, action: Action) {
       }
     }
 
-    case ActionTypes.GET_ALL_POST: {
-      return {
-        ...state,
-        responseData: action.payload
-      }
-    }
-
     default:
       return state
   }
