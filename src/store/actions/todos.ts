@@ -4,7 +4,7 @@ import GetPosts from '../../models/GetPosts';
 /*
  * In order to automatically generate id for our todos
  */  
-let nextId = 0
+let nextId = 11
 
 /*
  * We're defining every action name constant here

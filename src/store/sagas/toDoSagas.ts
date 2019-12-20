@@ -37,7 +37,13 @@ export function* asyncGetPosts() {
   try {
     const response = yield call(axios.get, "https://jsonplaceholder.typicode.com/posts?userId=1");
     // yield put({type: actions.getPostSuccess, response: response.data});
-    yield put(getPostSuccess(response.data))
+    const newResponse = response.data.map((e: any) => {
+      console.log(e)
+      e.done = false;
+      return e;
+    });
+    console.log(newResponse)
+    yield put(getPostSuccess(newResponse))
   } catch (e) {
       console.log(e);
     } 

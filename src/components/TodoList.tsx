@@ -41,7 +41,7 @@ export default class TodoList extends React.Component<Props, State> {
           this.state.todoList.map(todo => (
             <li
               key={todo.id}
-              onClick={() => toggleTodo(todo.id)}
+              onClick={() => toggleTodo(todo.id || todo.userId)}
               style={{ textDecoration: `${todo.done ? 'line-through' : ''}`, cursor: 'pointer' }}
             >
               {todo.name || todo.title}
